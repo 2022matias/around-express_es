@@ -14,16 +14,5 @@ app.use("/", (req, res, next) => {
 app.use(express.urlencoded({ extended: true }));
 app.use('/users', routerUser);
 app.use('/cards', routerCards);
-
-
-app.get("users/:id", (req, res) => {
-  if (!users[req.params.id]) {
-    res.send({ "message": "ID de usuario no encontrado" });
-    return;
-  }
-  const { name, age } = users[req.params.id];
-
-  res.send(`Usuario ${nombre}, ${edad} años`);
-});
-
+app.get("users/:id", routerUser);
 app.listen(PORT);
