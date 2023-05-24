@@ -14,5 +14,6 @@ app.use("/", (req, res, next) => {
 app.use(express.urlencoded({ extended: true }));
 app.use('/users', routerUser);
 app.use('/cards', routerCards);
-app.get("users/:id", routerUser);
+app.get("/users/:id", routerUser);
+
 app.listen(PORT);
