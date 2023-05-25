@@ -11,8 +11,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/users', routerUser);
 app.use('/cards', routerCards);
 
-app.use("/", (req, res, next) => {
-  res.status(404).send({ message: "Recurso solicitado no encontrado" });
+app.use('/', (req, res) => {
+  res.status(404).send({ message: 'Recurso solicitado no encontrado' });
 });
 
 app.listen(PORT);
