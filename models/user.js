@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
 const userSchema = new Schema({
   name: {
@@ -23,8 +23,8 @@ const userSchema = new Schema({
         return /^(http|https):\/\/[^ "]+$/.test(v);
       },
       message: 'No es un link válido',
-    }
-  }
-})
+    },
+  },
+});
 
 module.exports = mongoose.model('User', userSchema);

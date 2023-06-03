@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const Schema = mongoose.Schema;
+const { Schema } = mongoose;
 
 const cardSchema = new Schema({
   name: {
@@ -17,7 +17,7 @@ const cardSchema = new Schema({
         return /^(http|https):\/\/[^ "]+$/.test(v);
       },
       message: 'No es un link válido',
-    }
+    },
   },
   owner: {
     type: mongoose.Schema.Types.ObjectId,
@@ -36,6 +36,3 @@ const cardSchema = new Schema({
 });
 
 module.exports = mongoose.model('Card', cardSchema);
-
-
-
